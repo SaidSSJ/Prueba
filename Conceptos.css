@@ -1,0 +1,1712 @@
+/*Aquí en CSS se definen las formas, colores y todo lo relacionado a estilos de HTML, por lo que sí, contiene muchas opciones para personalizar una página web al gusto de c/u*/
+
+/*LOS PRINCIPALES CÓDIGOS PARA DAR ESTILOS A UNA PÁGINA SE DETALLARÁN A CONTINUACIÓN: 
+
+SINTAXIS: 
+p{
+	color: red;
+	text-align: center;
+}
+*p es un selector en CSS (apunta al elemento HTML que desea diseñar: <p>).
+*el color es una propiedad y el rojo es el valor de la propiedad
+*text-align es una propiedad, y el centro es el valor de la propiedad 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+SELECTORES:
+p{
+	color: blue;
+} <--Todos los elementos p van a ser afectados
+
+#elemento_id{
+	color: blue;
+} <--Todos los elementos con el id="elemento_id" van a ser afectados
+
+.elemento_class{
+	color: blue;
+} <--Todos los elementos con la clase class="elemento_clase" van a ser afectados
+
+h3.titulo{
+	color: blue;
+} <--Todos los elementos h3 con class="titulo" van a ser afectados
+
+*{
+color: blue;
+} <--El * es un selector universal, por lo que todos los elementos HTML de la página van a ser afectados
+
+h1, h2, p, .titulo{
+	color: green;
+} <--Todos los elementos h1, h2, p y con class="titulo" van a ser afectados
+
+------------------------------------------------------------------------------------------------------------------------------------------
+COLORES: pueden expresarse de 4 formas distintas: con nombres, con valores rgb, valores hexadecimales y valores hsl
+Nombres:        color: aqua; los más usados (personalmente) son: aqua, red, blue, green, yellow, violet, orange, etc... Existen un total de 140 nombres de colores y son soportados por todos los navegadores
+rgb: 		    color: rgb(34, 230, 103); Se expresa como la intensidad de 3 colores: r(red, rojo) g(green, verde) b(blue, azul), variando éstos valores de 0 a 255 obtenemos el color deseado
+Hexadecimales:  color: #f00; color: #ff0000; Igual que el rgb, solor que se ingresan valores hexadecimales, y éstos pueden ser 3 o 6
+hsl:            color: hsl(234, 100%, 0%); Toma 3 parámetros: tono (de 0 a 360), saturación (de 0 a 100%) y luminosidad (de 0 a 100%)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+BACKGROUND: afecta a todos los fondos de los elementos seleccionados en el código CSS
+background-color: #f00; El fondo del elemento se torna de color rojo
+background-image: url("imagen.jpg"); El fondo del elemento se rellena con la imagen determinada, si la imagen es de tamaño inferior al del fondo, se repita hasta conseguir que se rellene todo
+background-repeat: repeat-x; El fondo se repite de la forma en la que se desee, en éste caso sólo se repetirá en el eje x
+también podemos hacer que se repita para el eje y (repeat-y) o que no se repita directamente (no-repeat)
+opacity: 0.3; Es para que la luminosidad del color de fondo sea de 30%
+background-size: auto; Es para establecer el tamaño de la imagen del fondo, puede ser auto (automático), medidas (30px, 40px serían 30px de ancho y 40px de alto), 
+porcentaje (de igual forma que las medidas dadas pero en éste caso serían porcentajes), cover (estira o corta los bordes para que cubran el fondo), contain
+(cambia el tamaño de la imagen de fondo para que sea totalmente visible), initial (reestablece la propiedad a su valor por defecto), inherit (hereda la propieadad de su elemento padre). 
+background-position: right top; background-attachment: fixed; Es para que el fondo no se desplace cuando la página lo haga
+background-position: right top; background-attachment: scroll; Es para que el fondo se desplace cuando la página lo haga
+background: #ff0000 url("imagen.jpg") no-repeat fixed right top; El shorthand (abreviado de propiedades) se escribe como: background: color imagen repeat attachment position;
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+BORDER: 
+border-style: para personalizar como se desea que se muestren los bordes. Puede contener hasta 4 valores, 1 para cada borde (superior, derecho, inferior, izquierdo)
+Ejemplos de uso:
+p.dotted {border-style: dotted;} <--Define un borde punteado
+p.dashed {border-style: dashed;} <--Define un borde discontinuo
+p.solid {border-style: solid;} <--Define un borde sólido
+p.double {border-style: double;} <--Define un borde doble
+p.groove {border-style: groove;} <--Define un borde ranurado 3D. El efecto depende del valor del color del borde.
+p.ridge {border-style: ridge;} <--Define un borde estriado 3D. El efecto depende del valor del color del borde.
+p.inset {border-style: inset;} <--Define un borde de inserción 3D. El efecto depende del valor del color del borde.
+p.outset {border-style: outset;} <--Define un borde inicial 3D. El efecto depende del valor del color del borde.
+p.none {border-style: none;} <--No define ningún borde
+p.hidden {border-style: hidden;} <--Define un borde oculto
+p.mix {border-style: dotted dashed solid double;} <--Borde mixto (el superior es dotted, derecho dashed, inferior solid, e izquierdo double)
+
+border-width: thin; Determina el grosor de un borde. Existen 3 valores predefinidos: thin (grueso), medium (medio) y thin (fino) Tambié se pueden establecer medidas con unidades (px, vw, vh, em, cm, etc)
+Para determinar bordes específicos se hace así: border-width: 10px 20px; <--Bordes superior e inferior de 10px, derecho e izquierdo de 20px
+border-width: 10px 20px 30px 40px; <--Para indicar que el borde superior es de 10px, el derecho de 20px, el inferior de 30px y el izquierdo de 40px
+
+border-color: red #ff0 rgb(255, 0, 255) hsl(234, 45%, 78%); Para poner colores funciona del mismo modo que width, el 1º valor es el superior, el 2º es el derecho y así sucesivamente
+
+border-left: 10px solid blue; <--El borde izquierdo va a ser un borde azul sólido de 10px
+
+border-radius: 5px; Sirve para determinar el redondeado de un borde, en éste caso estamos haciendo que un borde se redonde unos 5px
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+MARGIN: Es una propiedad de un elemento de crear un espacio a su alrededor (fuera de la caja). Ejemplos:
+margin-top: 10px; <--El margen superior va a ser de 10px. margin: 10px 20px 30px 40px <--El margen superior va a ser de 10px, derecho de 20px, inferior de 30px, izquierdo de 40px
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+PADDING: Igual que el margin a diferencia que el espacio es dentro de la caja. También se pueden usar porcentajes para expresar medidas. Ejemplos:
+padding-bottom: 30%; <--Afecta al espacio entre el texto y el borde inferior. padding: 10px 20px 30px 40px; <--10px superior y así sucesivamente
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+HEIGHT Y WIDTH: height (altura) width(anchura) sirven para determinar el alto y ancho de un elemento (usando también porcentajes). También están min-height, max-height, min-width y max-width
+Ejemplos:
+div{
+	width: 34%;
+	max-height: 56px;
+} <--Altura máxima de 56px, ancho de 34%
+div{
+	height: 34px;
+	min-width: 56%;
+} <--Ancho mínimo de 56%, altura de 34px
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+OUTLINE: Es como border, pero a diferencia de éste, se dibuja por fuera de border, puede superponerse a otros elementos y no forma parte de la medida de la caja
+Ejemplo: 
+p{
+	outline: 10px dashed green; <--Establece un outline de 10px dashed de color verde
+}
+outline-offset: 10px; <--Crea una separación entre el borde de la caja y el outline de 10px y éste espacio es transparente
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+PROPIEDADES DE TEXT: El texto podemos formatearlo de muchas formas (muchas propiedades), Ejemplos:
+p{
+	color: #f00; 							          <--Especificamos el color de la letra
+	background-color: rgb(234, 123, 14); 			  <--Especificamos el color del fondo
+	text-align: center; 							  <--Elegimos como queremos que se alinee el texto. Puede ser center (centrado), top, right, bottom, left, justify (justificar), last (alinear sólo última línea)
+	direction: rtl; 							      <--Determinamos la orientación del texto, puede ser rtl (right to left) o ltr (left to right)
+	text-transform: uppercase; 					      <--Con esto convertimos el texto a todo mayúsculas, todo minúsculas con lowercase o le ponemos mayúsculas al principio de cada palabra con capitalize
+	text-indent: 30px; 							      <--Determinamos el espacio de sangría que se desea
+	letter-spacing: -2px; 							  <--Determinamos la separación entre las letras
+	line-height: 0.8; 								  <--Determinamos la separación entre las líneas de texto
+	word-spacing: -4px; 							  <--Determinamos la separación entre las palabras
+	text-shadow: 2px 2px 4px #f00, 2px 2px 4px blue;  <--Determinamos la sombra del texto, la cual toma 4 parámetros (sombreado horizontal, vertical, efecto blur, color). También es posible utilizarlo sin el parámetro blur
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+FUENTES: 
+Fuentes seguras (que se encuentran en todos los navegadores, o en la mayoría):
+Arial (sans-serif)
+Verdana (sans serif)
+Helvética (sans-serif)
+Tahoma (sans serif)
+Trebuchet MS (sans serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier Nuevo (monoespaciado)
+Brush Script MT (cursiva)
+
+p{
+	font-family: "Times New Roman", Arial, sans-serif;   			<--Se elige la fuente, en caso de que Times New Roman no se encuentre disponible, va a utilizar Arial, y así. Si el nombre de la fuente está compuesta por más de 1 palabras, se utilizan las comillas
+	font-style: oblique; 							     			<--Se elige el estilo de la fuente, puede ser normal, italic (itálica) u oblique (es como la itálica pero menos compatible)
+	font-weight: 500; 									 			<--Se especifica el grosor de las letras de la fuente, los valroes más comunes pueden variar de 0 a 1000, siendo 1000 el más grueso
+	font-size: 10vw;									 			<--Se establece el tamaño de la fuente, puede ser en píxeles, porcentajes, em, etc. En diseños responsivos se utiliza vw (viewport width)
+	font: italic small-caps 500 12px/30px "Times new Roman", serif; <--El shorthand de font va en orden: style, variant, weight, size/line-height, family
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ICONOS:
+En este caso vamos a utilizar font awesome para obtener los íconos deseados, basta con copiar el siguiente código en el head de nuestro documento HTML:
+<script src="https://kit.fontawesome.com/74b4171c2b.js" crossorigin="anonymous"></script>	y luego, para incorporar íconos a nuestra página, debemos nombrarlos así:
+Para mostrar un ícono de un meteoro, pondremos ésta línea de código donde lo queremos:    <i class="fas fa-meteor"></i>
+
+Podemos utilizar glyphicons de Bootstrap, para eso copiamos el siguiente código: 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+Para graficar un ícono de un sobre, pondremos una línea de código:    <i class="glyphicon glyphicon-envelope"></i>
+
+También podemos utilizar íconos de google: <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+Para graficar un ícono de corazón:    <i class="material-icons">favorite</i>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+LINKS: Los enlaces (<a>) poseen las mismas propiedades que cualquier otro elemento y se le añaden otros 4 estados:
+a:link - Un link cuando aún no ha sido visitado
+a:visited - un link cuando ya lo hemos visitado
+a:hover - Un link cuando se le pasa el mouse por encima
+a:active - Un link cuando se le está haciendo click
+Existen algunas reglas de orden: a:hover DEBE venir después de a:link y a:visited a:active DEBE venir después de a:hover
+Para el hover también se pueden modificar los cursores utilizando cursor: valor, el cual puede ser:
+Para ajustar el tamaño de elementos: e-resize, n-resize, ne-resize, nw-resize, s-resize, se-resize, sw-resize, w-resize,
+auto, crosshair, default, help, move, pointer (como se ve cuando se le hace hover a un link), progress, text, wait,
+not-allowed (circulo negro con barra diagonal)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LISTAS: Las listas pueden ser desordenadas (<ul>) u ordenadas (<ol>)
+ul.b {
+    list-style-type: square; 			<--Se elige la forma de c/ítem, puede ser circle (círculo sin relleno), square (cuadrado), disc (círculo con relleno), none es para sacarle los ítems
+}
+ol.c {
+    list-style-type: upper-roman; 	    <--En los ítems ordenados podemos usar: upper-alpha o upper-latin (LETRAS), lower-alpha o lower-latin (letras), upper-roman, lower-roman (nº romanos), etc.
+    list-style-position: outside;       <--Con outside mostramos los ítems fuera de la caja, con inside los motramos dentro de la caja
+	list-style-image: url(imagen.jpg);  <--Con esto seleccionamos la imagen que deseamos que se muestre como ítem
+}
+Shorthand: orden (type, position, image) Ej:  list-style: circle outside url("image.jpg");
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TABLAS: Las tablas poseen 3 tipos de elementos: table (el cuerpo completo de la tabla), th (header de la tabla),
+td (columnas de la tabla) y tr (filas de la tabla). A éstos 3 elementos se le pueden aplicar bordes (usando el shorthand ya aprendido)
+Dependiendo de los elementos, se le aplicarán los respectivos bordes, por ejemplo, si se le aplicar border a table,sólo se marcará el
+borde de la tabla, pero no de las columnas o filas. Podemos aplicarle table-width: 100%; para rellenar todo el ancho de la pantalla.
+Podemos aplicar a los elementos table, th y td las propiedades width y height. Podemos aplicar las propiedades text-align. También
+vertical-align: bottom; <--Sirve para especificar que el alineado vertical sea siempre hacia abajo si hay espacio sobrante, puede ser
+top o center. Podemos aplicarle padding, y los elementos td y tr pueden adoptar las propiedades border-bottom: 1px solid gray; Si
+aplicamos hover para cambiar el color de fondo de los elementos tr, cambiarán los fondos de las filas
+tr:nth-child(even) {background-color: #f2f2f2;} <--Para que las filas alternen entre color default y el seleccionado
+Si deseamos que sólo el fondo de la primera fila se vea afectado, debemos poner background-color únicamente en th
+Para que la tabla sea responsive debemos meterla dentro de un contenedor div con overflow-x: auto;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISPLAY: En ésta propiedad se pueden utilizar: none (no mostrar), block (se muestra como bloque), inline (en una línea) (éstos últimos 2 son los más comunes/por defecto)
+Para ocultar un elemento podemos utilizar display: none; <--No se muestra y no ocupa el espacio que debería ocupar    visibility: hidden; <--No se muestra pero sigue ocupando lo que debería en la página
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WIDTH: A la hora de establecer un ancho para nuestros elementos en CSS usamos width, pero al achicar la página obtendremos una barra de desplazamiento,
+para solucionar ésto utilizaremos max-width:  y margen: auto;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POSITION: Existen 5 tipos de posicionamientos para los elementos: 
+static - Estático, flujo normal
+relative - Posición relativa a su posición normal
+fixed - Se mantiene estático con respecto al viweport, osea que se queda fijo en la página y no se mueve de allí
+sticky - Alterna entre relative y static y cuando llega a un punto del scroll, se adhiere (sticky) a la página
+absolute - Se coloca en relación con el ancestro posicionado más cercano (en lugar de posicionarse en relación con la ventana gráfica, como fijo). Sin embargo; si un elemento con posición absoluta no tiene ancestros con posición,
+utiliza el cuerpo del documento y se mueve junto con el desplazamiento de la página. Son eliminados del flujo normal y se superponen a otros elementos
+Para el posicionamiento se utilizan top, bottom, right, left así:
+p{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Z-INDEX: Para mostrar un elemento por encima de otro basta con darle un z-index: y un número, que sería el orden, Ej:
+.p1{z-index: 2;}
+.p2{z-index: 1;} <--El elemento p1 se va a mostrar por encima de p2
+Si no usamos z-index, el último elemento declarado se va a mostrar por encima
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OVERFLOW: Cuando el contenido desborda de su caja, podemos decidir que hacer con el texto sobrante:
+visible - se muestra lo que sobra fuera de la caja
+hidden - se oculta lo que sobra
+scroll - el overflow se muestra pero usamos un scroll para ello
+auto - similar a scroll pero lo utilizamos sólo cuando es necesario
+overflow-x - para decidir que va a suceder con el overflow a la derecha e izquierda
+overflow-y - para decidir que va a suceder con el overflow arriba y abajo
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FLOAT: float sirve para indicar el posicionamiento de una imagen o texto dentro de un contenedor
+left - A la izquierda
+right - A la derecha
+none - Default
+inherit - Adopta la propiedad heredada
+
+CLEAR: clear sirve para indicar que sucederá con el elemento que está al lado de un elemento flotante
+none- El elemento no se empuja debajo de los elementos flotantes izquierdo o derecho. esto es por defecto
+left - El elemento se empuja debajo de los elementos flotantes izquierdos
+right - El elemento se empuja debajo de los elementos flotantes a la derecha
+both - El elemento se empuja debajo de los elementos flotantes izquierdo y derecho
+inherit - El elemento hereda el valor clear de su padre
+La propiedad clear debe usarse de tal forma que coincida el elemento flotante con el que se le va a aplicar clear. Ej:
+div1 {
+  float: left;
+}
+div2 {
+  clear: left; <--El elemento div2 se va a desplazar a la izquierda del elemento flotante div1
+}
+Existe un truco clearfix para resolver la problemática de que si un elemento flotante es más alto que el elemento contenedor, se "desbordará" fuera de su contenedor
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; <--De ésta forma quedaría resuleto el problema
+}
+Para posicionar cajas una al lado de las otras, con float es muy fácil:
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%; <--Si son 2 cajas 50%, si son 4 25%, y así sucesivamente
+  padding: 50px; <--Si se busca espacio entre las imágenes
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISPLAY INLINE-BLOCK: En comparación con inline, la principal diferencia es que inline-block permite establecer un ancho y alto en el elemento. Además,con inline-block, se respetan los márgenes/rellenos superior e inferior, pero con display: inline no lo son. 
+La principal diferencia es que inline-block no agrega un salto de línea después del elemento, por lo que el elemento puede ubicarse junto a otros
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ALIGN: Utilizando margin: auto; estableceremos el ancho del elemento para que no se extienda hasta los bordes del contenedor
+Para centrar el texto dentro del elemento debemos utilizar text-align: center;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+} <--Para centrar una imagen debemos establecer margin-left y right en auto;
+Para alinear elementos a la derecha o izquierda, podemos utilizar la propiedad float con clearfix o position: absolute;
+Podemos utilizar padding también, o padding combinado con text-align
+Para centrarlo verticalmente podemos utilizar line-height:
+.center{
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid green;
+  text-align: center;
+}
+Y si el texto tiene varias líneas, agregaremos:
+.center p{
+	line-height: 1.5;
+	display: inline-block;
+	vertical-align: middle;
+}
+Si no podemos utilizar padding y/o line-height, podemos utilizar position y transform:
+.center {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+Y también se puede utilizar flexbox:
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+COMBINATORS (COMBINADORES): Explican la relación entre selectores
+ - Con un espacio podemos explicar los elementos descendientes. Ej:
+div p {
+  background-color: yellow;
+} <--Se ven afectados todos los elementos p dentro de todos los div
+> - Con > podemos seleccionar un child (hijo). Ej:
+div > p{
+	background-color: yellow;
+} <--Se ven afectados todos los elementos p hijos del elemento div
++ - Para seleccionar un sibling (hermano) adyacente. Ej:
+div + p {
+  background-color: yellow;
+} <--Se seleccionan todos los elementos p que sigan inmediatamente después de los elementos div
+~ - Para seleccionar un sibling en general. Ej:
+div ~ p{
+	background-color: yellow;
+} <--Selecciona todos los elementos p que son los siguientes hermanos de los elementos div
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSEUDO-CLASSES: Son para decidir que sucede en un determinado estado especial de un elemento:
+Sintaxis:
+selector:pseudo-class{
+  property: value;
+}
+Ya hemos visto las pseudo-clases: hover, link, visited, active, y ahora hay más:
+p:first-child{
+	background-color: yellow;
+} <--Todos los elementos p que sean primeros hijos de otros elementos van a ser afectados
+p i:first-child {
+  color: blue;
+} <--Todos los primeros elementos i hijos de p van a ser afectados
+p:first-child i{
+	background-color: red;
+} <--Todos los elementos i de los primeros hijos p de cualquier elemento se van a ver afectados
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSEUDO-ELEMENTOS: Sirven para editar pequeñas partes de elementos, partes específicas, editar, insertar contenido antes o después del elemento, etc
+Sintaxis:
+selector::pseudo-element {
+  property: value;
+}
+::first-line - Sirve para editar el contenido de la 1º línea de un texto
+::first-letter - Sirve para editar la 1º letra del texto
+::before - Sirve para insertar contenido antes del elemento
+::after - Sirve para insertar contenido después del elemento. Ej de éstos últimos 2:
+h1::before{
+  content: url(smiley.gif);
+} <--Se inserta una imagen antes del h1
+h1::after{
+  content: url(image.jpg);
+} <--Se inserta una imagen después del h1
+::marker - Sirve para afectar a los marcadores de la lista. Ej:
+::marker {
+  color: red;
+  font-size: 23px;
+} <--Todos los marcadores de la lista se van a tornar de color rojo y van a tener una fuente de 23px
+::selection - Sirve para afectar al elemento cuando se lo selecciona con el mouse. Ej:
+::selection {
+  color: red;
+  background: yellow;
+} <--Cuando seleccionamos el contenido, el texto se torna de color rojo y el fondo de color amarillo
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OPACITY: Se usa pra cambiar la opacidad de elementos. Se usan valores del 0 al 1 (0% a 100% de opacidad) 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NAVIGATION BAR = LISTA DE ENLACES: Por lo que para realizar una barra de navegación basta con hacer una lista de enlaces, Ej:
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+Si deseamos hacer una barra de navegación vertical, deberíamos mostrarlos como bloques (display: block;) y agregarle un width para que se pueda clickear en todo el bloque en lugar de la palabra
+li a {
+  display: block;
+}
+También deberíamos aplicarles un hover a los elementos de la lista, y si el usaurio está en una sección, hacércelo saber con el color de hover
+Por Ej: si estamos es una pagina que se llama Inicio y vamos a otra que se llama Info, en la barra deberíamos tener Info marcada con el color con el que se le hace hover, y
+el ítem Inicio debería estar en el estado default (distinto del hover)
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  height: 100%; 
+  position: fixed; <--Para que quede fijado en la página por más que scrollees
+  overflow: auto;  <--Si la barra posee mucho contenido, sidenav se va a desplazar
+}
+Para realizar una barra de navegación horizontal podemos aplciar el mismo código que para una barra vertical pero a diferencia de que en ésta
+podremos poner líneas de separación (con border-right), los elementos deberemos mostrarlos como inline, si deseamos elementos a la derecha
+por ejemplo 3 a la izquierda y 1 a la derecha, utilizaremos la propiedad float para conseguirlo
+También podemos utilizar position: sitcky; para que una vez pasemos por una parte de la página web, el menu se quede fijado
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DROPDOWN (DESPLEGABLE):
+Para hacer una sección desplegable:
+<style>
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content{
+  display: none;      <--Mientras no se le pase por arriba el mouse al elemento dropdown, no se mostrará el dropdown-content
+  position: absolute; <--Necesario para que el contenido se muestre justo por debajo de dropdown
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;         <--Y tiene un z-index para mostrarse por encima del contenido que esté en el lugar donde debería mostrarse
+}
+.dropdown:hover .dropdown-content{
+  display: block;     <--Cuando se le pasa el mouse por arriba, se muestra el dropdown-content
+}
+</style>
+<div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+    <p>Hello World!</p>
+  </div>
+</div>
+
+Para hacer un menu desplegable:
+<style>
+.dropbtn{                                                 <--Estilo del botón dropdown
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown{                                                <--Es necesario un contenedor div, que tanto el menu desplegable como el contenido desplegable
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content{                                        <--Estilo del dropdown-content, que por default va a estar oculto (hidden)
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a{                                      <--Estilo de los enlaces del menu
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover{background-color: #f1f1f1;}     <--Cuando se le pasa el cursor por encima, cambia el color de fondo
+.dropdown:hover .dropdown-content{display: block;}        <--Cuando se le pasa el cursor por encima, se muestra el dropdown-content
+.dropdown:hover .dropbtn{background-color: #3e8e41;}      <--Cuando se le pasa el cursor por encima, cambia el color del fondo del color de dropbtn
+</style>
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
+Para crear una galería de imágenes:
+<html>
+  <head>
+    <style>
+      div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+      }
+      div.gallery:hover {
+        border: 1px solid #777;
+      }
+      div.gallery img {
+        width: 100%;
+        height: auto;
+      }
+      div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+        <a target="_blank" href="img_5terre.jpg">
+          <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="img_forest.jpg">
+          <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+        </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="img_lights.jpg">
+          <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="img_mountains.jpg">
+          <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+        </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </body>
+</html>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IMAGE SPRITES: Es un conjunto de imágenes, y sirve para lidiar con los problemas de carga que suelen suceder si una página posee muchas imágenes. Ej:
+#home{
+  width: 46px;                              <--Seleccionamos las dimensiones de la imagen resultante (la porción que utilizaremos)
+  height: 44px;
+  background: url(img_navsprites.gif) 0 0;  <--Seleccionamos la posición de la imagen, (left 0px, top 0px)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ATTRIBUTE SELECTORS (SELECTORES DE ATRIBUTOS): Es posible diseñar eleventos con atributos específicos
+a[target]{
+  background-color: yellow; <--Selecciona todos los elementos <a> con un atributo de destino
+}
+
+a[target="_blank"] {
+  background-color: yellow; <--Selecciona todos los elementos <a> con un atributo target="_blank"
+}
+
+[title~="flower"] {
+  border: 5px solid yellow; <--Selecciona todos los elementos con un atributo de título que contiene una lista de palabras separadas por espacios, una de las cuales es "flor"
+}
+
+[class|="top"] {
+  background: yellow;       <--Selecciona a los elementos con el atributo especificado, con el valor que sea una palabra completa (textual o seguida de un guión -)
+}
+
+[class^="top"] {
+  background: yellow;       <--Selecciona a los elementos que comiencen con el valor, (el valor no debe ser una palabra completa)
+}
+
+[class$="test"] {
+  background: yellow;       <--Selecciona a los elementos que terminen con el valor (el cual no debe ser una palabra completa)
+}
+
+[class*="te"] {
+  background: yellow;       <--Selecciona a los elementos que contengan el valor (el cual no debe ser una palabra completa)
+}
+Otro ejemplo de uso con forms:
+input[type="text"]{
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+input[type="button"]{
+  width: 120px;
+  margin-left: 35px;
+  display: block;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FORMS (FORMULARIOS):
+Para ajustar el tamaño de los mismo, podemos utilizar width
+input {
+  width: 100%;
+}
+
+input[type=text] - solo seleccionará campos de texto
+input[type=password] - solo seleccionará campos de contraseña
+input[type=number] - solo seleccionará campos numéricos
+
+Para darle espacio dentro del formulario, usaremos padding:
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+Para darle un borde personalizado, utilizaremos border, y también la propiedad background para darle un fondo
+También utilizaremos :focus para indicarle que hacer cuando el elemento está seleccionado, osea, cuando al campo le hemos clickeado:
+input[type=text]:focus{
+  background-color: lightblue;    <--Le cambiamos el fondo
+  border: 3px solid black;        <--Le cambiamos el color del border
+}                                 <--El input se ve afectado cuando se lo selecciona (cuando se le hace click)
+
+Si deseamos hacer un input con image, debemos colocar la imagen y luego hacer un padding:
+input[type=text]{
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+Si deseamos un input animado, podemos emplear transition (CSS un poco más avanzado):
+input[type=text]{
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus{
+  width: 100%;
+}
+
+Para editar áreas de texto y que no nos aparezca el "capturador" (para agrandarlo), es necesario utilizar la propiedad resize: none; :
+textarea{
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+Para editar los seleccionadores de opciones:
+select{
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+<form>
+  <select id="country" name="country">
+    <option value="au">Australia</option>
+    <option value="ca">Canada</option>
+    <option value="usa">USA</option>        <--Aquí vamos a ir agregando las opciones que deseemos
+  </select>
+</form>
+
+Para editar los botones inputs:
+input[type=button], input[type=submit], input[type=reset]{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CSS COUNTERS (CONTADORES CSS):
+counter-reset - Crea o restablece un contador
+counter-increment - Incrementa un valor de contador
+content - Inserta contenido generado
+Función counter() o counters() - Agrega el valor de un contador a un elemento
+
+Crea un contador para la página (en el selector de body), luego incrementa el valor del contador para c/elemento <h2>
+ y agrega "Section <valor del contador>:" al comienzo de c/elemento <h2>
+body{
+  counter-reset: section;
+}
+h2::before{
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+Contadores anidados:
+Crea un contador para la página (sección) y un contador para c/elemento <h1> (subsección). El contador de "sección" se contará para
+c/elemento <h1> con "Sección <valor del contador de sección>.", y el contador de "subsección" se contará para 
+c/elemento <h2> con "<valor del contador de sección >.<valor del contador de subsecciones>":
+body{
+  counter-reset: section;
+}
+h1{
+  counter-reset: subsection;
+}
+h1::before{
+  counter-increment: section;
+  content: "Section " counter(section) ". ";
+}
+h2::before{
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+
+Un contador también puede ser útil para hacer listas delineadas porque una nueva instancia de un contador se crea automáticamente en 
+los elementos secundarios. Aquí usamos la función counters() para insertar una cadena entre diferentes niveles de contadores anidados:
+ol{
+  counter-reset: section;
+  list-style-type: none;
+}
+li::before{
+  counter-increment: section;
+  content: counters(section,".") " ";
+}
+
+Programa completo para probar contadores:
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      counter-reset: section;
+    }
+    h1 {
+      counter-reset: subsection;
+    }
+    h1::before{
+      counter-increment: section;
+      content: "Section " counter(section) ". ";
+    }
+    h2::before{
+      counter-increment: subsection;
+      content: counter(section) "." counter(subsection) " ";
+    }
+  </style>
+</head>
+  <body>
+    <h1>HTML/CSS Tutorials</h1>
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <h2>Bootstrap</h2>
+    <h2>W3.CSS</h2>
+    <h1>Scripting Tutorials</h1>
+    <h2>JavaScript</h2>
+    <h2>jQuery</h2>
+    <h2>React</h2>
+    <h1>Programming Tutorials</h1>
+    <h2>Python</h2>
+    <h2>Java</h2>
+    <h2>C++</h2>
+  </body>
+</html>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UNITS (UNIDADES):
+Unidades absolutas: son exactas y siempre valen lo mismo, por lo que no son recomendadas para pantallas, ya que, por ejemplo, la pantalla
+de una notebook no es del mismo tamaño que la de un celular, y 1000px no son lo mismo
+cm (centímetros)
+mm (milímetros)
+in (pulgadas), px (píexeles)
+pt (puntos)
+pc (picas=12pt)
+
+Unidades relativas: se adaptan mejor a los distintos dispositivos
+em: relativo al font-size del elemento (equivale al doble del font-size actual)
+ex: relativo a la altura de la fuente actual
+ch: relativo al ancho del "0"
+rem: relativo al font-size del elemento raíz
+vw: relativo al viewport-width (1% de la medida del mismo)
+vh: relativo al viewport-eight(1% de la medida del mismo)
+vmin: relativo al 1% de la dimensión más pequeña del viewport
+vmax: relativo al 1% de la dimensión más grande del viewport
+%: relativo al elemento padre
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ESPECFICIDAD: Jerarquía:
+Estilos en línea - Ej: <h1 style="color: pink;">
+IDs - Example: #navbar
+Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+Elementos y pseudo-elements - Example: h1, :before
+Si 2 selectores poseen la misma jerarquía, gana el más reciente
+
+!important:si usa la regla !importante, anulará TODAS las reglas de estilo anteriores para esa propiedad específica en ese elemento. Ej:
+#myid{
+  background-color: blue;
+}
+.myclass{
+  background-color: gray;
+}
+p{
+  background-color: red !important;
+}
+Y la jerarquía se repite nuevamente con !important, por lo que no hay que abusar de su uso (sólo cuando se lo necesite)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MATH FUNCTIONS (FUNCIONES MATEMÁTICAS):
+calc(): Hace un cálculo cuyo resultado va a ser utilizado como valor de un atributo
+#div1{
+  position: absolute;
+  left: 50px;
+  width: calc(100% - 100px);
+  border: 1px solid black;
+  background-color: yellow;
+  padding: 5px;
+}
+
+max(): Elige el valor más grande entre una lista de valores separados por coma
+#div1{
+  background-color: yellow;
+  height: 100px;
+  width: max(50%, 300px);
+}
+
+min(): Elige el valor mínimo de una lista de valores serparados por coma
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CSS "AVANZADO"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ROUNDED-CORNERS: Usando border radius, podemos definir cuánto se redondean los bordes de un elemento (es un shorthand), Ej:
+border-radius: 40px 30px 20px 10px; <--Borde superior izquierdo de 40px, superior derecho de 30px, inferior derecho de 20px,
+inferior izquierdo de 10px. Si deseamos especificar, utilizaremos border-top-left-radius: 10px; (Por ej, redondeamos el borde sup izq)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BORDER-IMAGE: La propiedad toma la imagen y la divide en nueve secciones, como un tablero de tres en raya. Luego coloca las esquinas
+en las esquinas y las secciones centrales se repiten o se estiran según lo especifique. Ej de uso:
+#borderimg{
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+Otros ejemplos:
+#borderimg1{
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 50 round;
+}
+#borderimg2{
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 20% round;
+}
+#borderimg3{
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30% round;
+}
+border-image-source - Especifica la ruta a la imagen que se utilizará como borde
+border-image-slice - Especifica cómo dividir la imagen del borde
+border-image-width - Especifica los anchos de la imagen del borde
+border-image-outset - Especifica la cantidad en la que el área de la imagen del borde se extiende más allá del cuadro del borde
+border-image-repeat - Especifica si la imagen del borde debe repetirse, redondearse o estirarse
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BACKGROUNDS: Las diferentes imágenes de fondo están separadas por comas y las imágenes se apilan una encima de la otra,
+donde la primera imagen está más cerca del espectador. Ej:
+#example1{
+  background-image: url(img_flwr.gif), url(paper.gif);  <--La imagen img_flwr.gif está por encima de paper.gif
+  background-position: right bottom, left top;          <--La 1º imagen se posiciona en la parte inferior derecha y la 2º en la parte superior izquierda
+  background-repeat: no-repeat, repeat;                 <--La 1º no se repite (ya que son unas flores) y la 2º si para mostrar un patrón de papel
+}
+También se puede usar la shorthand:
+#example1{
+  background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+}
+
+Con background-size especificamos el tamaño del fondo, Ej: bakcground-size: 100px 200px;  <--El fondo tiene 100px de alto y 200px de largo
+También podemos utilizar la palabras contain y cover.
+background-size: contain;  <--Sirve para que la imagen trate de ocupar todo el espacio hasta que una de sus dimensiones toque los bordes de la caja
+background-size: cover;    <--Sirve para que la imagen rellene todo el fondo y por eso algunas imágenes podrían mostrarse cortadas en algunos lados
+También funciona con mñultiples imágenes de fondo, las medidas deben estar separadas por coma:
+#example1{
+  background: url(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+  background-size: 50px, 130px, auto;
+}
+
+Para poner una imagen de tamaño completo en la página entera debemos tomar en cuenta éstos 4 consejos:
+-Rellene toda la página con la imagen (sin espacios en blanco)
+-Escale la imagen según sea necesario
+-Centrar la imagen en la página
+-No causar barras de desplazamiento
+html{
+  background: url(img_man.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+background-origin;  <--Con ésta propiedad le decimos desde dónde se ubica imagen. Podemos indicarle 3 formas distintas:
+-border-box: La imagen de fondo comienza en la esquina superior izquierda del borde
+-padding-box - (predeterminado) La imagen de fondo comienza desde la esquina superior izquierda del borde del relleno
+-content-box: La imagen de fondo comienza en la esquina superior izquierda del contenido
+
+background-clip;    <--Con ésta propiedad indicamos el área que deseamos que esté pintada. Podemos indicarle 3 formas distintas:
+-border-box - (predeterminado) El fondo se pinta en el borde exterior del borde
+-padding-box: El fondo está pintado en el borde exterior del relleno 
+-content-box: El fondo se pinta dentro del cuadro de contenido
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RGBA COLORS: Para seleccionar un color con rgba, el formato es: rgba (red, green, blue, opacity). Ej: deseamos un rojo total sin
+transparencia, escribimos color: rgba(255, 0, 0, 1.0);
+
+HSL COLORS: El formato es: hsl(tono, saturación, luminosidad (100% = blanco)) Ej: hsl(0, 100%, 0%); <--Nos mostrará un rojo fuerte con
+100% de saturación y 0% de luminosidad.
+
+HSLA: Es una extensión del HSL al que se le suma un atributo más, el alpha, que define la opacidad (va de 0.0 a 1.0)
+Ej: hsl(0, 100%, 0%, 1.0);  <--Color rojo fuerte con 100% de saturación, 0% de luminosidad y 1.0 de opacidad
+
+OPACITY: Es para definir la opacidad del color, va de 0.0 a 1.0. Ej: opacity: 0.5; <--Opacidad del 50%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+COLOR KEYWORDS: Hay palabras clave a la hora de seleccionar un color para un elemento o atributo de elemento, esas 3 palabras claves son:
+transparent - Sirve para volver cualquier elemento a color transparente
+currentcolor - Sirve para que el color de un elemento sea consistente, es una variable que almacena el color actual
+inherit - Sirve para que el color sea heredado de su elemento padre
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GRADIENT: Son para mostrar un degradado de color más suave, existen 3 tipos:
+Gradiente lineal - Va abajo/arriba/izquierda/derecha/diagonalmente
+Sintaxis: background-image: linear-gradient(direction, color-stop1, color-stop2, ...); Ej:
+#grad{
+  background-image: linear-gradient(red, yellow);
+}
+Para especificar la dirección, por ej para ir de abajo hacia arriba debemos utilizar to top. Si queremos de izquierda inferior a derecha
+superior ponemos to top right. Y así escribimos las direcciones para elegir la deseada.
+También podemos utilizar grados: 
+#grad{
+  background-image: linear-gradient(180deg, red, yellow); <--Se va a trasladar 180deg el gradiente
+}
+También podemos utilizar varios colores:
+#grad{
+  background-image: linear-gradient(red, yellow, green);  <--Se van a degradar los colores primero el rojo, amarillo y último el verde
+}
+Podemos utilizar la transparencia:
+#grad{
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); <--El color rojo se va a degradar de 100% opacidad a 0%
+}
+Por último, también podemos repetir la propiedad:
+#grad{
+  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+}
+
+Gradiente radial - Definido por su centro
+Sintaxis: background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+Ej con diferentes color-stops:
+#grad{
+  background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+Se le agrega un atributo más al principio para darle una forma distinta a la default (ellipse)
+#grad{
+  background-image: radial-gradient(circle, red, yellow, green);
+}
+También hay palabras claves sobre el tamaño:
+closest-side
+farthest-side
+closest-corner
+farthest-corner
+Ej:
+#grad1{
+  background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+}
+#grad2{
+  background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+}
+También podemos repetir un gradiente radial:
+#grad{
+  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+
+Gradiente cónico - Rotado alrededor de un punto central
+Sintaxis: background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);
+Ej de gradiente cónico de 3 colores:
+#grad{
+  background-image: conic-gradient(red, yellow, green); <--Podemos utilizar más colores si así lo deseamos
+}
+Podemos emeplear grados también:
+#grad{
+  background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+}
+Para hacer que el gradiente parezca un gráfico pastel, le agregamos border-radius: 50%; Ej:
+#grad{
+  background-image: conic-gradient(red, yellow, green, blue, black);
+  border-radius: 50%;
+}
+También podemos hacer un gráfico sin degradado (sin transición suave entre colores) de la siguiente forma:
+#grad{
+  background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+  border-radius: 50%;
+}
+Podemos especificar el centro del gradiente, Ej:
+#grad{
+  background-image: conic-gradient(at 60% 45%, red, yellow, green); <--El centro está en 60% 45%
+}
+También podemos repetir un gradiente cónico. Ej:
+#grad{
+  background-image: repeating-conic-gradient(red 10%, yellow 20%);
+  border-radius: 50%;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SHADOWS: Las sombras son muy útiles para personalizar el texto o las cajas de los elementos para que queden con una terminación distinta
+TEXT SHADOW: El uso más simple es con un texto y 2 dimensiones (la distancia de sombreado veretical y la horizontal): 
+h1{text-shadow: 2px 2px;}  <--Va a producir una sombra del mismo color que la del texto de 2px de horizontal y 2px vertical
+Podemos añadirle colores: h1{text-shadow: 2px 2px red;}  <--En este caso, el 3º atributo será el color de sombreado
+Otro atributo más sería el efecto de desenfoque (blur):  h1{text-shadow: 2px 2px 5px red;}
+h1{
+  color: white;
+  text-shadow: 2px 2px 4px #000000;  <--Va a producir un texto blanco con una sombra negra de fondo de 2px x 2px y un blur de 4px
+}
+h1{text-shadow: 0 0 3px #FF0000;}    <--Va a mostrar un texto con un color neón
+Para agregarle más sombras, podemos hacerlo de la siguiente forma, siempre separadas por comas:
+h1{text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;}
+Otro ejemplo: h1{
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+También podemos crear un borde alrededor del texto sin sombra. Ej:
+h1{
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  <--A las letras amarillas le añadimos un borde negro
+}
+
+BOX-SHADOW: Sirve para agregarle una o más sombras a un elemento. Funciona de forma similar a text-shadow, los primeros 2 atributos van 
+a ser las sombras en los ejes x e y, el tercero va a ser el color de la sombra, se le añade otro más luego de los 2 primeros que define
+el blur, en el caso de box-shadow, se le añade un valor más que es el spread o dispersión de la sombra, un valor positivo le añade 
+dispersión, un valor negativo hace que ésta sea menor. Ej:
+div{box-shadow: 10px 10px 5px 12px grey;} <--Crea una sombra gris de 10px en x y 10px en y, 5px de blur y una dispersión de 12px
+Hay otro parámetro llamado inset que es para que la sombra se genere dentro del elemento, ej: div{box-shadow: 10px 10px 5px grey inset;}
+También se le pueden añadir múltiples sombras, siempre separadas por comas, Ej:
+div{box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;}   También podemos hacer tarjetas en nuestra página utilizando la propiedad:
+div.card{
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEXT EFFECTS: TEXT-OVERFLOW: Es para decidir que sucederá con el texto cuando sea más largo que su contenedor y existen 2 valores:
+clip - El texto que no logra mostrarse se muestra cortado, ocultado por la caja
+ellipsis - El texto que no se puede mostrar, se ponen 3 puntos al final donde se corta.
+Para usar éstos efectos necesitamos que overflow sea hidden (overflow: hidden;)
+Para permitir que las palabras largas se puedan dividir y pasar a la siguiente línea: p{word-wrap: break-word;}
+para establecer reglas de work-break, ej:
+p.test1{word-break: keep-all;}           p.test2{word-break: break-all;}
+También podemos decidir el modo de escritura con writing-mode, ej:
+p.test1{writing-mode: horizontal-tb;}     <--horizontal top to bottom
+span.test1{writing-mode: horizontal-bt;}  <--horizontal bottom to top
+span.test2{writing-mode: vertical-rl;}    <--vertical right to left
+p.test2{writing-mode: vertical-lr;}       <--vertical left to right
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FONT-FACE: Sirve para incluir en nuestro archivo html nuevas fuentes desde archivos en nuestro ordenador. Ej:
+@font-face{
+  font-family: myFirstFont;       <--Indicamos que la fuente va a llamarse MyFirstFont para incluirla a nuestro elementos
+  src: url(sansation_bold.woff);  <--Aquí indicamos la fuente del archivo de la fuente, 
+  font-weight: bold;              <--Aquí elegimos la variante de la fuente que vamos a utilizar
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2D TRANSFORMS: Son transformaciones 2D, o sea, en 2 dimensiones y existen diferentes tipos:
+translate() - Sirve para trasladar un elemento de su posición actual, por lo que toma 2 parámetros (distancia en el x axis y en el y axis)
+Ej: div{transform: translate(20px -30px);} <--Trasalada un elemento 20px en x y -30px en y
+
+rotate() - Sirve para rotar un elemento. Ej: div{transform: rotate(35deg);} <--Rota un elemento 35º, podemos darle valores negativos
+
+scaleX() - Sirve para escalar la distancia en el eje x de un elemento. Ej:
+div{transform: scaleX(2.3);} <--El elemento va a ser (en su eje x) 2.3 veces más grande que su longitud original
+
+scaleY() - Sirve para escalar la distancia en el eje x de un elemento. Ej:
+div{transform: scaleY(0.5);} <--El elemento va a ser (en su eje y) 0.5 veces más grande que su longitud original (osea, la mitad)
+
+scale() - Podemos agrupar scaleX() y scaleY() en un sólo shorthand, scale(), Ej:
+div{transform: scale(2.3, 0.5);} <--El elemento va a ser 2.3 veces más largo y 0.5 veces más alto
+
+skewX() - Sirve para inclinar un elemento en el eje x. Ej:
+div{transform: skewX(20deg);} <--Inclina un elemento 20º en el x axis
+
+skewY() - skewY() - Sirve para inclinar un elemento en el eje y. Ej:
+div{transform: skewY(30deg);} <--Inclina un elemento 30º en el y axis
+
+skew() - Podemos agrupar skewX() y skewY() en un sólo shorthand, skew(), Ej:
+div{transform: skew(20deg, 30deg);} <--El elemento va a ser inclinado 20º en el x axis y 30º en el y axis
+
+matrix() - Combina todos los tipos de transformaciones en una sola, tomando 6 parámetros para desarrollar funciones matemáticas
+Sintaxis: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())         Ej: div{transform: matrix(1, -0.3, 0, 1, 0, 0);}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3D TRANSFORMS: Transformaciones 3D, en éstas incluimos el eje z.
+rotateX() - Sirve para rotar un elemento en su eje x. Ej: div{transform: rotateX(20deg);} <--Va a rotar un elemento en su eje x 20º
+
+rotateY() - Sirve para rotar un elemento en su eje y. Ej: div{transform: rotateY(30deg);} <--Va a rotar un elemento en su eje y 30º
+
+rotateZ() - Sirve para rotar un elemento en su eje z. Ej: div{transform: rotateZ(40deg);} <--Va a rotar un elemento en su eje z 40º
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TRANSITION: Para usar transiciones en CSS, es necesario tener en cuenta un par de cosas. Una transición es una forma más suave de mostrar
+el estado anterior del elemento y el estado actual (cuando se le modifica algo mediante un :hover o :active etc), por lo que para poder
+visualizarla necesitamos de un estado base de un elemento y de un estado en el que sus propieadades cambien, Ej:
+div{
+  background-color: #f00;
+  border: 3px solid #000;
+  width: 400px;
+  height: 200px;
+  transition: width 2s, height 4s; 
+} <--Cuando se le pase el mouse por encima del elemento, se va a producir una transición entre su estado actual y su estado :hover, 
+específicamente 2 segundos para la propiedad width y 4 segundos para height
+div:hover{
+  width: 800px;
+  height: 400px;
+}
+
+A ésto le podemos modificar el efecto o la curva de velocidad de la transición, seleccionando una de éstas palabras claves:
+ease - Especifica un efecto de transición con un comienzo lento, luego rápido, luego finaliza lentamente (esto es predeterminado)
+linear - Especifica un efecto de transición con la misma velocidad de principio a fin
+ease-in Especifica un efecto de transición con un comienzo lento
+ease-out - Especifica un efecto de transición con un final lento
+ease-in-out - Especifica un efecto de transición con un comienzo y un final lentos
+cubic-bezier(n,n,n,n) - Le permite definir sus propios valores en una función cubic-bezier
+
+También podemos indicarle un tiempo de retardo antes de realizar la transición. Ej:
+div{transition-delay: 1s;} <--Antes de realizar la transición, espera 1 segundo
+Podemos ir poniendo las propiedades de animación una por una de la siguiente forma:
+div{
+  transition-property: width;         <--Indicamos la propiedad que va a adoptar la transición
+  transition-duration: 2s;            <--Indicamos cuánto queremos que dure la transición
+  transition-timing-function: linear; <--Indicamos la forma en la que deseamos que se realice la transición
+  transition-delay: 1s;               <--Indicamos el retraso antes de realizar la transición
+}
+O podemos utilizar el shorthand:
+div{transition: width 2s linear 1s;} <--Hacemos que el width cambie de forma lineal y dure 2 segundos y tenga un delay de 1s
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANIMATION: @key-frames: Sirve para crear una animación, y para que ésta funcione, debemos asociarle un elemento a la cual afecte, Ej:
+@keyframes example{               <--Se declara la animación llamada example
+  from {background-color: red;}   <--Va a producir un cambio desde background-color: red
+  to {background-color: yellow;}  <--A background-color: yellow
+}
+div{                              <--Aquí se declara el elemento que va a ser afectado
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;        <--Aquí se asocia el nombre de la animación con el elemento (en éste caso a todos los div)
+  animation-duration: 4s;         <--Y aquí especificamos la duración de la animación
+}
+También podemos emplear porcentajes para expresar el cambio de estado, ej:
+@keyframes example{
+  0%  {background-color: red;}    <--Cuando la animación se encuentre en un 0%, va a cambiar el color de fondo a rojo
+  25% {background-color: yellow;} <--Cuando la animación se encuentre en un 25%, va a cambiar el color de fondo a amarillo
+  50% {background-color: blue;}   <--Cuando la animación se encuentre en un 50%, va a cambiar el color de fondo a azul
+  100%{background-color: green;}  <--Cuando la animación se encuentre en un 100%, va a cambiar el color de fondo a verde
+}
+El siguiente ejemplo cambia el color y la posición del elemento con porcentajes:
+@keyframes example{
+  0%  {background-color:red; left:0px; top:0px;}
+  25% {background-color:yellow; left:200px; top:0px;}
+  50% {background-color:blue; left:200px; top:200px;}
+  75% {background-color:green; left:0px; top:200px;}
+  100%{background-color:red; left:0px; top:0px;}
+}
+
+animation-delay - Sirve para añadirle un delay a la animación, ej:
+div{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s;   <--En éste ejemplo, la animación va a estar reproducida ya 2 segundos cuando se vea al elemento
+}
+
+animation-iteration-count - Sirve para indicar cuántas veces queremos que se produzca la animación, ej:
+div{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite; <--Le podemos insertar cuántas veces deseamos que se reproduzca, infinite=infinitas veces
+}
+
+animation-direction: Sirve apra indicar el sentido de reproducción de la animación
+normal - La animación se reproduce normalmente (hacia adelante). esto es por defecto
+reverse - La animación se reproduce en dirección inversa (hacia atrás)
+alternate - La animación se reproduce primero hacia adelante y luego hacia atrás
+alternate-reverse - La animación se reproduce primero hacia atrás y luego hacia adelante
+div{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+animation-timing-function - Aquí utilizaremos las mismas palabras claves que con transition, sirven para indicar la curva de velocidad
+de reproducción de las animaciones, ej:
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+
+animation-fill-mode: Sirve para indicar el estilo del elemento cuando no se está reproduciendo su animación
+none - Valor predeterminado. La animación no aplicará ningún estilo al elemento antes o después de que se ejecute
+forwards - El elemento conservará los valores de estilo establecidos por el último fotograma clave (depende de la dirección de la
+animación y el número de iteraciones de la animación)
+backwards - El elemento obtendrá los valores de estilo establecidos por el primer fotograma clave (depende de la dirección de la
+animación) y los conservará durante el período de retraso de la animación
+both - La animación seguirá las reglas para avanzar y retroceder, extendiendo las propiedades de la animación en ambas direcciones
+
+Para todos éstos atributos podemos aplicar el shorthand correspondiente: animation:
+animation: nombre duración timing-function delay iteration-count direction; Ej:
+div{animation: example 5s linear 2s infinite alternate;}
+Todos los divs van a tener una animación llamada example que va a durar 5s, la curva de velocidad de transición va a ser lineal, va a 
+tener 2s de delay, va a reproducirse de forma infinita y va a tener un animation direction alternate
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOOLTIPS: Es la información que vemos cuando le pasamos por encima a un elemento en una página, Ej:
+<style>
+  .tooltip{
+    position: relative;     <--Vamos a posicionar el tooltip de forma relativa
+    display: inline-block;  <--Vamos a mostrar el elemento con inline-block
+  }
+  <--Se van a crear 2 clases para el tooltip, el contenedor llamado tooltip y el texto llamado tooltiptext
+  .tooltip .tooltiptext{    <--Los elementos con las clases seleccionadas van a ser afectados
+    visibility: hidden;     <--En principio van a estar ocultos
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    <--Todo lo recién escrito es la personalización del tooltip
+    position: absolute;     <--Vamos a posicionarlo de forma absoluta
+    z-index: 1;             <--Y le vamos a dar un valor de z-index para que se muestre por encima de todos los demás elementos
+  }
+  .tooltip:hover .tooltiptext{visibility: visible;}<--Cuando se le pase el cursor por encima se va a mostrar el tooltip
+</style>
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+
+Si se desea que el tooltip se posicione en un lugar deseado con respecto al elemento, debemos colocar:
+.tooltip .tooltiptext{
+  top: -5px;
+  left: 105%; <--Si queremos que se posicione a la izquierda del elemento, si queremos a la derecha reemplazamos left por right
+}
+
+Para animar todo ésto es tan sencillo como añadirle un transition acerca de opacity e inicializar el elemento con opacity 0
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EFECTOS DE IMÁGENES:
+.blur {filter: blur(4px);}                          <--
+.brightness {filter: brightness(250%);}             <--Sirve para aplicar un efecto brillo
+.contrast {filter: contrast(180%);}                 <--Sirve para aplicar un efecto contraste
+.grayscale {filter: grayscale(100%);}               <--Sirve para aplicar un efecto grayscale
+.huerotate {filter: hue-rotate(180deg);}            <--Sirve para aplicar un efecto de rotación de los tonos
+.invert {filter: invert(100%);}                     <--Sirve para aplicar un efecto de inversión de los colores
+.opacity {filter: opacity(50%);}                    <--Sirve para aplicar un efecto de opacidad
+.saturate {filter: saturate(7);}                    <--Sirve para aplicar un efecto de saturación
+.sepia {filter: sepia(100%);}                       <--Sirve para aplicar un efecto sepia
+.shadow {filter: drop-shadow(8px 8px 10px green);}  <--Sirve para aplicar un efecto de sombra en el cuadro que contiene a la imagen
+Para mostrar una imagen reflejada: img:hover{transform: scaleX(-1);}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OBJECT-FIT: Indica como se debe acomodar una imagen para adaptarse a su contenedor:
+fill - Esto es predeterminado. La imagen se redimensiona para llenar la dimensión dada. Si es necesario, la imagen se estirará o 
+aplastará para que quepa
+contain - La imagen mantiene su relación de aspecto, pero se redimensiona para ajustarse a la dimensión dada
+cover - La imagen mantiene su relación de aspecto y llena la dimensión dada. La imagen se recortará para que quepa
+none - La imagen no se redimensiona
+scale-down - La imagen se reduce a la versión más pequeña de none o contain
+.fill {object-fit: fill;}
+.contain {object-fit: contain;}
+.cover {object-fit: cover;}
+.scale-down {object-fit: scale-down;}
+.none {object-fit: none;}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OBJECT POSITION: Se utiliza para indicar de que forma se posiciona un objeto en su contenedor:
+Sintaxis: object-position: 80% 100%; <--Si la imagen es más grande que el contenedor, si el 1º valor es 100%, se va a mostrar la parte
+de la imagen más próxima hacia la derecha, y si es 0% la parte más próxima hacia la izquierda
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CSS MASKING: 
+Podemos utilizar una imagen como capa de máscara - Es una imagen png que tiene otra imagen que conforma su interior, ej:
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .mask1{
+        -webkit-mask-image: url(w3logo.png);  <--Para que funcione en todos los ordenadores debemos colocar
+        mask-image: url(w3logo.png);          <--tanto la versión con el prefijo webkit que la versión sin webkit
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        <--La propiedad mask-image especifica la imagen que se utilizará como capa de máscara para un elemento
+        <--Si omitimos la propiedad mask-repeat la imagen w3logo.png se repetirá en toda la imagen img_5terre.jpg
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The mask-image Property</h1>
+    <h3>An image with a mask layer image:</h3>
+    <div class="mask1">
+      <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+      <--El atributo alt sirve para poder introducir un texto del mismo valor que la imagen
+    </div>
+    <h3>Original image:</h3>
+    <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+  </body>
+</html>
+
+Combinando gradiente con la propieadad mask, podemos hacer que una imagen muestre solo un círculo nítido en el centro:
+<head>
+  <style>
+  .mask2{
+    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+  }
+  </style>
+</head>
+<body>
+  <h1>The mask-image Property</h1>
+  <h3>A radial gradient as a mask layer (a circle):</h3>
+  <div class="mask2">
+    <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+  </div>
+  <h3>Original image:</h3>
+  <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+</body>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variables: Podemos declarar variables en CSS de la siguiente forma: --name: value y para utilizar hacemos var(--name), ej:
+:root{                <--Declaramos las variables dentro de :root para que tengan un alcance global, osea, para todo el documento
+  --blue: #1e90ff;    <--En éste caso, si deseamos un color de azul determinado, para no utilizar siempre el código, usamos variables
+  --white: #ffffff;   <--Acá lo mismo, usamos --white para nuestro tono de blanco preferido
+}
+
+Podemos utilizar variables con media queries:
+:root{
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+.container{--fontsize: 25px;}
+body{background-color: var(--blue);}
+h2{border-bottom: 2px solid var(--blue);}
+.container{
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+  font-size: var(--fontsize);
+}
+@media screen and (min-width: 450px){ <--Cuando la pantalla sea de 450px o menos, la fuente va a ser de 50px en lugar de 25px
+  .container{--fontsize: 50px;}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BOX-SIZING: Es importante y muschos desarrolladores están orientados a que los elementos de una página se encuentren con
+box-sizing: border-box; para que el cálculo de las dimensiones de un elemento sea mucho más simple
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@media: Los media queries son muy útiles para adaptar los estilos del contenido para dispositivos de distintas dimensiones: ordenadores,
+tablets, smartphones, etc. y como su nombre lo indica son queries (consultas) sobre las dimensiones del dispositivo desde el cual se 
+está observando la página web, su orientación si es un smartphone o tablet, y demás.
+
+En el código HTML podemos añadir una línea para incluir una hoja de estilo:
+<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+
+En CSS, su sintaxis es: @media not|only mediatype and (expressions){CSS-Code;}
+Cuando se utiliza para impresoras es @media print y cuando es para pcs y dispositivos móviles, se utiliza @media screen 
+Ej:
+@media screen and (min-width: 480px){        <--Cuando la pantalla tenga un ancho de 480px o menos
+  #leftsidebar {width: 200px; float: left;}  <--El elemento con la id #leftsidebar va a ser afectado
+  #main {margin-left: 216px;}                <--Y también va a ser afectado el elemento con la id #main
+}
+Otro ej:
+body{background-color: tan;}          <--Por defecto, el body va a tener un color de fondo bronceado
+@media screen and (max-width: 992px){ <--Cuando el ancho de la pantalla sea menos de 992px, el fondo se va a tornar de color azul
+  body{background-color: blue;}
+}
+@media screen and (max-width: 600px){ <--Cuando el ancho de la pantalla sea menos de 600px, el fondo se va a tornar de color oliva
+  body{background-color: olive;}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FLEXBOX: FLEX-CONTAINER: Hasta ahora vimos sólo 4 formas de mostrar elementos en nuestra página: bloque, línea, tablas y posicionado con
+position. Con flexbox podemos hacer cajas flexibles y así hacer más fácil el diseño responsive, ya que el contenido se ajusta. Ej:
+.flex-container{
+  display: flex;            <--El elemento se muestra de forma flex
+  flex-direction: column;
+<--Column stackea los elementos de forma vertical, column-reverse lo hace al revés, row lo hace de forma horizontal, y reverse al revés
+  flex-wrap: wrap;
+<--Indica si los elementos se acomodan cuando se reduce o aumenta las dimensiones de la ventana. Puede ser wrap, nowrap y wrap-reverse
+  flex-flow: row wrap;      <--Es un shorthand de flex-direction y flex-wrap
+  justify-content: center;
+<--center - Alinea los elementos en el centro del contenedor
+   flex-start (default) - Alinea los elementos al principio del contenedor
+   flex-end - Lo hace al final del contenedor
+   space-around - Deja un espacio antes y después entre los diferentes elementos
+   space-beetwen - Deja un espacio después de cada elemento, pero no en los bordes del contenedor y los elementos de los extremos
+   align-items: ;       <--Es lo mismo que justify-content, pero start y end son arriba y abajo del container, stretch (default) hace que
+<--se estiren los elementos para ocupar todo el contenedor en lo vertical, baseline alinea con el centro del texto de cada elemento
+}<--Con justify-content: center; y align-items: center; podemos centrar perfectamente elementos dentro de un .flex-container
+
+
+
+FLEX-ITEM: Todos los elementos childs de un flex-container automáticamente se convierten en flex-items y heredan ciertas propiedades:
+order - Sirve para especificar el orden de los flex-items
+<div class="flex-container">
+  <div style="order: 3">1</div> <--El elemento que muestra el nº 1 va a posicionarse 3º
+  <div style="order: 2">2</div> <--El elemento que muestra el nº 2 va a posicionarse 2º
+  <div style="order: 4">3</div> <--El elemento que muestra el nº 3 va a posicionarse 4º
+  <div style="order: 1">4</div> <--El elemento que muestra el nº 4 va a posicionarse 1º
+</div>
+
+flex-grow - Sirve para especificar cuanto espacio va a tomar un elemento flexible con respecto a los demás:
+<div class="flex-container">
+  <div style="flex-grow: 1">1</div> <--El elemento va a tomar 1 parte del total en partes en las que se repartan los elementos (6)
+  <div style="flex-grow: 1">2</div> <--El elemento va a tomar 2 partes del total en partes en las que se repartan los elementos (6)
+  <div style="flex-grow: 8">3</div> <--El elemento va a tomar 3 partes del total en partes en las que se repartan los elementos (6)
+</div>
+
+flex-shrink - Especifica cuánto se encogerá un elemento flexible en relación con el resto de los elementos flexibles (default 1)
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex-shrink: 0">3</div> <--El elemento 3 no va a seder espacio alguno
+  <div>4</div>
+</div>
+
+flex-basis - Especifica la longitud inicial de un elemento flexible
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex-basis: 200px">3</div> <--El elemento 3 va a tener una longitud inicial de 200px
+  <div>4</div>
+</div>
+
+flex - Podemos agrupar éstas 3 propiedades a vistas con el shorthand: flex: flex-grow flex-shrink flex-basis; Ej:
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex: 0 0 200px">3</div>  <--El elemento 3 no se va a agrandar ni encoger y va a tener una longitud de 200px
+  <div>4</div>
+</div>
+
+align-self - especifica la alineación del elemento seleccionado dentro del contenedor flexible. La propiedad anula la alineación 
+predeterminada establecida por la propiedad align-items del contenedor. Ej;
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="align-self: center">3</div> <--Alinea al elemento 3 en el medio del contenedor
+  <div>4</div>
+</div>
+Alinea el elemento 2 en la parte superior del contenedor, y el elemento 3 en la parte inferior
+<div class="flex-container">
+  <div>1</div>
+  <div style="align-self: flex-start">2</div>
+  <div style="align-self: flex-end">3</div>
+  <div>4</div>
+</div>
+
+Utilizando algo de flexbox en diseño responsive:
+.flex-container{
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 800px){
+  .flex-container{flex-direction: column;} <--Cuando la pantalla sea menor de 800px, los elementos se van a stackear como columnas
+}
+
+Otro ejemplo empleado para responsive design:
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+}
+.flex-item-left{
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+}
+.flex-item-right{
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
+}
+@media (max-width: 800px){
+  .flex-item-right, .flex-item-left{flex: 100%;}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PAUTAS PARA LLEVAR A CABO UN RESPONSIVE DESIGN DE BUENA CALIDAD: 
+NO use elementos grandes de ancho fijo
+NO permita que el contenido dependa de un viewport-width en particular para mostrarse bien
+Use consultas de medios CSS para aplicar diferentes estilos para pantallas pequeñas y grandes
+Para que un video sea responsive, es tan simple como añadir 2 líneas de código o a nuestro CSS:  width: 100%; height: auto; y estaría
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/*font-family: 'Raleway', sans-serif;   <---Se deja fijado para luego copiar y pegar para seleccionar la fuente*/
+
+
+
+
+
+
+
+
+
+.flex-container{
+	display: inline-block;
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.first-title {font-size: 50px;}
+
+.second-title{font-size: 60px;}
+
+.third-title {font-size: 70px;}
+
+.fourth-title{font-size: 80px;}
+
+.fifth-title {font-size: 90px;}
+
+.sixth-title{
+  display: inline-block;
+	font-size: 100px;
+  padding: 20px;
+  border: 20px solid turquoise;
+  border-radius: 40px 30px 20px 10px;
+  transition: border 5s, background 3s, color 0.5s;
+}
+
+.sixth-title:hover{
+  background-color: red;
+  color: #fff;
+  border-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+.first-title{
+	color: #f0f;
+	background-color: turquoise;
+	border: 5px solid red;
+	border-radius: 10px;
+	margin: 15px;
+	box-shadow: 30px 20px 10px 10px black
+}*/

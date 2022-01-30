@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html><!--Se especifica el tipo de documento, en este caso va a ser contenido HTML-->
+<!--Cada etiqueta (<etiqueta></etiqueta>) se escribe lo que se desea mostrar en la página web, en el código html se definen las estructuras, en el CSS los colores, formas y todo lo que tenga que ver con personalización, y en el Javascript se programa lo funcional, el resto de lo que constituye a la página web (que es lo más extenso, laborioso y a la vez importante)-->
+<html><!--Entre éstas etiquetas se escribe todo el código html-->
+    <head><!--Entre éstas etiquetas se escribe la información que no vamos a ver del todo, a excepción del título y el ícono-->
+        <meta charset="utf-8"><!--Entre éstas etiquetas se coloca el tipo de codificación de los caracteres, en el español sería utf-8 -->
+        <link rel="stylesheet" href="Conceptos.css"><!--Se incorpora como archivo de hojas de estilo en cascada (CSS) a probando.css-->
+        <link rel="stylesheet" href="normalize.css"><!--También se incorpora a normalize.css para quitar los márgenes innecesarios en el documento-->
+        <!--A continuación, el código es para implementar una nueva fuente en la página, para eso se utiliza google fonts, y se copia el link que se muestra al seleccionar una fuente-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <link rel="icon" href="SLU2SE7GUFCSLEZ5XZ2HF5O7IU.ico"><!--Aquí se coloca el ícono que va a contener la página web-->
+        <script src="https://kit.fontawesome.com/74b4171c2b.js" crossorigin="anonymous"></script>
+        <title>Probando CSS y JS</title><!--El título aparece en la parte superior de la ventana-->
+    </head><!--Cierre de la etiqueta head-->
+    <body><!--Entre éstas etiquetas se escriben todas las etiquetas que van a conformar la parte estética de la página web-->
+
+    <!--Las etiquetas más utilizadas son:
+h: son títulos, según el número, la jerarquía, por ejemplo: todos las etiquetas h1 van a verse más grandes que las h2, y así sucesivamente, se recomienda poner pocas o una sola etiqueta h1, pocas h2 y de h3 en adelante se pueden poner las que se deseen, pero es más por tema de orden y prolijidad
+div: define una división en un documento HTML y se usa para agrupar elementos de bloque para formatearlos con CSS, dentro de éstas etiquetas se pueden poner nuevas estructuras (por ej: puede ponerse un h1 en el documento html y uno más en el div y así como se desee)
+aside: La etiqueta aside representa la barra lateral donde hay contenido relacionado con la página
+p: párrafo, sólo se escribe texto en ellas
+article: como su nombre lo indica, son artículos, son como divs pero a menor escala, ya que también es posible crear estructuras dentro de éstas etiquetas
+footer: son el pie de página
+ul: dentro de ul se crean "items" como si fuese una lista desordenada
+ol: igual que ul pero es una lista ordenada
+li: y los items de ul se representa con li
+section: funciona de una forma similar a div, en su significado semántico, sirve para ayudar al SEO, section define las secciones de un documento, como capítulos, encabezados, pies de página o cualquier otra sección del documento
+nav: es una sección que crea una barra de navegación, dentro de ellas también se introducen etiquetas li
+form: es una sección formulario, por lo que dentro de ellas pondremos inputs
+input: son para que el usuario ingrese datos de todo tipo: texto, sólo números, colores, correos electrónicos, 
+a: la etiqueta a representan los hiperenlaces y nos permite enlazar una página web con otra página web u otros documentos, utiliza el argumento href
+Ej: <a href="youtube.com">Ingresar a YouTube</a>
+br: representa un salto de línea, no requiere cierre
+blockquote: sirve para escribir texto, funciona igual que la etiqueta <p></p>
+style: son las etiquetas de estilos, sirven para aplicar (como su nombre lo indica) estilos sin necesidad de incorporar un archivo css en el documento html, o tambié se utiliza si es un estilo muy corto. Ejemplos de uso:
+<style> p{color: #f00}</style> <--todos los elementos p van a tener un color de fuente #f00
+También hay otra forma de incorporarlos a los archivos HTML como los llamandos estilos en línea, Ej: 
+<h3 style="color: blue; text-align: center;">Titulo azul y centrado</h3>
+img: La etiqueta img nos permite representar imágenes dentro de una página web. Los atributos más importantes para la etiqueta img son src, alt, width, height, no requiere cierre. Ejemplo: <img src="imagen.jpg">
+audio: entre éstas etiquetas se muestra audio, ej:
+<audio controls>
+    <source src="forelisa.mp3" type="audio/mp3">
+</audio>
+table: sirve para crear una tabla y tiene un argumento para definir el grosor de los bordes: entre las etiquetas <tr></tr> se va a insertar una fila, y con <td></td> el texto de cada columna. Ejemplo de uso:
+<table border="1px">
+    <tr><td><b>Nombre</b></td><td><b>Apellido</b></td></tr>
+    <tr><td>Nahuel</td><td>Sileone</td></tr>
+    <tr><td>Sofía/td><td>Sileone</td></tr>
+</table>
+
+ESTILOS INCORPORADOS DE HTML:
+strike: Para colocar una línea horizontal a lo largo del texto
+b: Resaltar información importante
+strong: De manera similar a la negrita, para resaltar el texto clave
+i: letra itálica
+em: Usualmente se usa como leyendas de imágenes
+mark: resaltar fondo del texto
+small: disminuir el tamaño del texto
+big: aumentar el tamaño del texto
+u: se utiliza para enlaces o resaltados de texto
+sub: Elección estilística tipográfica
+sup: Otro estilo de presentación tipográfico
+
+A TODAS ÉSTAS ETIQUETAS PODEMOS ASIGNARLES CLASES O IDS Y DEMÁS ATRIBUTOS
+-->
+
+        <div class="flex-container"><!--Creamos un elemento div con la clase flex-container, ya que utilizaremos flex en los estilos de CSS-->
+            <h1>Primer título</h1><br><!--Creamos un título h1 y hacemos un salto de línea-->
+            <h2>Segundo título</h2><br><!--Creamos un título h2 y hacemos un salto de línea-->
+            <h3>Tercer título</h3><br><!--Creamos un título h3 y hacemos un salto de línea-->
+            <h4>Cuarto título</h4><br><!--Creamos un título h4 y hacemos un salto de línea-->
+            <h5>Quinto título</h5><br><!--Creamos un título h5 y hacemos un salto de línea-->
+            <h6>Sexto título</h6><br><!--Creamos un título h6 y hacemos un salto de línea-->
+            <p>Como podemos observar, los títulos de acuerdo a sus jerarquías se muestran más grandes a medida que el número se asemeja a 1</p><br>
+            <p>Aunque, sin importar los números de los h, podemos modificar el tamaño de las fuente para que ésta jerarquía sea insignificante:</p><br>
+            <h1 class="first-title">Primer título</h1><br><!--Creamos un título h1 con la clase first-title y hacemos un salto de línea-->
+            <h2 class="second-title">Segundo título</h2><br><!--Creamos un título h2 con la clase second-title y hacemos un salto de línea-->
+            <h3 class="third-title">Tercer título</h3><br><!--Creamos un título h3 con la clase third-title y hacemos un salto de línea-->
+            <h4 class="fourth-title">Cuarto título</h4><br><!--Creamos un título h4 con la clase fouth-title y hacemos un salto de línea-->
+            <h5 class="fifth-title">Quinto título</h5><br><!--Creamos un título h5 con la clase fifth-title y hacemos un salto de línea-->
+            <h6 class="sixth-title">Sexto título</h6><br><!--Creamos un título h6 con la clase sixth-title y hacemos un salto de línea-->
+        </div><!--Cierre del div con la clase flex-container-->
+        <script src="Probando.css"></script><!--En ésta línea se ejecutará el archivo de js-->
+        <!--Para acceder a los archivos normalmente entiende que al colocar el nombre del archivo a seleccionar-->
+    </body><!--Cierre de la etiqueta body--> 
+</html><!--Cierre de la etiqueta html-->
